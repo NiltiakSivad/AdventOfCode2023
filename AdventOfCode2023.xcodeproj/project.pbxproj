@@ -15,6 +15,11 @@
 		CAF971FE2B1B80AD0059A56F /* AdventOfCode2023UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971FD2B1B80AD0059A56F /* AdventOfCode2023UITests.swift */; };
 		CAF972002B1B80AD0059A56F /* AdventOfCode2023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971FF2B1B80AD0059A56F /* AdventOfCode2023UITestsLaunchTests.swift */; };
 		CAF972142B1B8E310059A56F /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF972132B1B8E310059A56F /* CalendarView.swift */; };
+		CAF972172B1B8FC70059A56F /* Day1TrebuchetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF972162B1B8FC70059A56F /* Day1TrebuchetView.swift */; };
+		CAF9721A2B1B92BB0059A56F /* day-1.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAF972192B1B92BB0059A56F /* day-1.txt */; };
+		CAF9721F2B1BA2550059A56F /* Day1TrebuchetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF9721E2B1BA2550059A56F /* Day1TrebuchetPresenter.swift */; };
+		CAF972252B1BCAE70059A56F /* FileProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF972242B1BCAE70059A56F /* FileProcessor.swift */; };
+		CAF972272B1BCB8B0059A56F /* Day1TrebuchetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF972262B1BCB8B0059A56F /* Day1TrebuchetInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		CAF971FD2B1B80AD0059A56F /* AdventOfCode2023UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventOfCode2023UITests.swift; sourceTree = "<group>"; };
 		CAF971FF2B1B80AD0059A56F /* AdventOfCode2023UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventOfCode2023UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CAF972132B1B8E310059A56F /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		CAF972162B1B8FC70059A56F /* Day1TrebuchetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1TrebuchetView.swift; sourceTree = "<group>"; };
+		CAF972192B1B92BB0059A56F /* day-1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day-1.txt"; sourceTree = "<group>"; };
+		CAF9721E2B1BA2550059A56F /* Day1TrebuchetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1TrebuchetPresenter.swift; sourceTree = "<group>"; };
+		CAF972242B1BCAE70059A56F /* FileProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProcessor.swift; sourceTree = "<group>"; };
+		CAF972262B1BCB8B0059A56F /* Day1TrebuchetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1TrebuchetInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +108,11 @@
 			children = (
 				CAF971E62B1B80AC0059A56F /* Assets.xcassets */,
 				CAF971E82B1B80AC0059A56F /* Preview Content */,
+				CAF972182B1B929E0059A56F /* Data */,
+				CAF972152B1B8FBE0059A56F /* Days */,
+				CAF9721C2B1BA1740059A56F /* Views */,
+				CAF972232B1BCABC0059A56F /* Utils */,
 				CAF971E22B1B80AB0059A56F /* AdventOfCode2023App.swift */,
-				CAF971E42B1B80AB0059A56F /* RootView.swift */,
-				CAF972132B1B8E310059A56F /* CalendarView.swift */,
 			);
 			path = AdventOfCode2023;
 			sourceTree = "<group>";
@@ -128,6 +140,49 @@
 				CAF971FF2B1B80AD0059A56F /* AdventOfCode2023UITestsLaunchTests.swift */,
 			);
 			path = AdventOfCode2023UITests;
+			sourceTree = "<group>";
+		};
+		CAF972152B1B8FBE0059A56F /* Days */ = {
+			isa = PBXGroup;
+			children = (
+				CAF9721D2B1BA23B0059A56F /* Day1 */,
+			);
+			path = Days;
+			sourceTree = "<group>";
+		};
+		CAF972182B1B929E0059A56F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CAF972192B1B92BB0059A56F /* day-1.txt */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CAF9721C2B1BA1740059A56F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAF972132B1B8E310059A56F /* CalendarView.swift */,
+				CAF971E42B1B80AB0059A56F /* RootView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CAF9721D2B1BA23B0059A56F /* Day1 */ = {
+			isa = PBXGroup;
+			children = (
+				CAF972262B1BCB8B0059A56F /* Day1TrebuchetInteractor.swift */,
+				CAF9721E2B1BA2550059A56F /* Day1TrebuchetPresenter.swift */,
+				CAF972162B1B8FC70059A56F /* Day1TrebuchetView.swift */,
+			);
+			path = Day1;
+			sourceTree = "<group>";
+		};
+		CAF972232B1BCABC0059A56F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CAF972242B1BCAE70059A56F /* FileProcessor.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAF9721A2B1B92BB0059A56F /* day-1.txt in Resources */,
 				CAF971EA2B1B80AC0059A56F /* Preview Assets.xcassets in Resources */,
 				CAF971E72B1B80AC0059A56F /* Assets.xcassets in Resources */,
 			);
@@ -263,6 +319,10 @@
 				CAF971E52B1B80AB0059A56F /* RootView.swift in Sources */,
 				CAF971E32B1B80AB0059A56F /* AdventOfCode2023App.swift in Sources */,
 				CAF972142B1B8E310059A56F /* CalendarView.swift in Sources */,
+				CAF972272B1BCB8B0059A56F /* Day1TrebuchetInteractor.swift in Sources */,
+				CAF972252B1BCAE70059A56F /* FileProcessor.swift in Sources */,
+				CAF9721F2B1BA2550059A56F /* Day1TrebuchetPresenter.swift in Sources */,
+				CAF972172B1B8FC70059A56F /* Day1TrebuchetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

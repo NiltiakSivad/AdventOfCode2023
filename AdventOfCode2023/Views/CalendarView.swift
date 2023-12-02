@@ -2,6 +2,8 @@ import SwiftUI
 
 struct CalendarView: View {
     @State private var showDay0 = false
+    @State private var showDay1 = false
+
     var body: some View {
         HStack {
             VStack {
@@ -13,9 +15,16 @@ struct CalendarView: View {
                 .alert("Yay to me 🎉 for starting my Advent of Code journey!", isPresented: $showDay0) {
                     Button("👏", role: .cancel) { }
                 }
-                Button("Day 1", action: {})
+                
+                Button("Day 1", action: {
+                    showDay1 = true
+                })
                     .buttonStyle(.borderedProminent)
                     .tint(.green)
+                    .sheet(isPresented: $showDay1) {
+                        let presenter = Day1TrebuchetPresenter()
+                        Day1TrebuchetView(delegate: presenter)
+                    }
                 Button("Day 2", action: {})
                     .buttonStyle(.borderedProminent)
                     .tint(.red)
