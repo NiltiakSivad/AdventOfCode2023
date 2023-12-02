@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CAF971E32B1B80AB0059A56F /* AdventOfCode2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971E22B1B80AB0059A56F /* AdventOfCode2023App.swift */; };
-		CAF971E52B1B80AB0059A56F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971E42B1B80AB0059A56F /* ContentView.swift */; };
+		CAF971E52B1B80AB0059A56F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971E42B1B80AB0059A56F /* RootView.swift */; };
 		CAF971E72B1B80AC0059A56F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF971E62B1B80AC0059A56F /* Assets.xcassets */; };
 		CAF971EA2B1B80AC0059A56F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF971E92B1B80AC0059A56F /* Preview Assets.xcassets */; };
 		CAF971F42B1B80AD0059A56F /* AdventOfCode2023Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971F32B1B80AD0059A56F /* AdventOfCode2023Tests.swift */; };
 		CAF971FE2B1B80AD0059A56F /* AdventOfCode2023UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971FD2B1B80AD0059A56F /* AdventOfCode2023UITests.swift */; };
 		CAF972002B1B80AD0059A56F /* AdventOfCode2023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971FF2B1B80AD0059A56F /* AdventOfCode2023UITestsLaunchTests.swift */; };
+		CAF972142B1B8E310059A56F /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF972132B1B8E310059A56F /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		CAF971DF2B1B80AB0059A56F /* AdventOfCode2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventOfCode2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF971E22B1B80AB0059A56F /* AdventOfCode2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventOfCode2023App.swift; sourceTree = "<group>"; };
-		CAF971E42B1B80AB0059A56F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CAF971E42B1B80AB0059A56F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CAF971E62B1B80AC0059A56F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAF971E92B1B80AC0059A56F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CAF971EF2B1B80AD0059A56F /* AdventOfCode2023Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventOfCode2023Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		CAF971F92B1B80AD0059A56F /* AdventOfCode2023UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventOfCode2023UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF971FD2B1B80AD0059A56F /* AdventOfCode2023UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventOfCode2023UITests.swift; sourceTree = "<group>"; };
 		CAF971FF2B1B80AD0059A56F /* AdventOfCode2023UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventOfCode2023UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CAF972132B1B8E310059A56F /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +96,11 @@
 		CAF971E12B1B80AB0059A56F /* AdventOfCode2023 */ = {
 			isa = PBXGroup;
 			children = (
-				CAF971E22B1B80AB0059A56F /* AdventOfCode2023App.swift */,
-				CAF971E42B1B80AB0059A56F /* ContentView.swift */,
 				CAF971E62B1B80AC0059A56F /* Assets.xcassets */,
 				CAF971E82B1B80AC0059A56F /* Preview Content */,
+				CAF971E22B1B80AB0059A56F /* AdventOfCode2023App.swift */,
+				CAF971E42B1B80AB0059A56F /* RootView.swift */,
+				CAF972132B1B8E310059A56F /* CalendarView.swift */,
 			);
 			path = AdventOfCode2023;
 			sourceTree = "<group>";
@@ -257,8 +260,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAF971E52B1B80AB0059A56F /* ContentView.swift in Sources */,
+				CAF971E52B1B80AB0059A56F /* RootView.swift in Sources */,
 				CAF971E32B1B80AB0059A56F /* AdventOfCode2023App.swift in Sources */,
+				CAF972142B1B8E310059A56F /* CalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
