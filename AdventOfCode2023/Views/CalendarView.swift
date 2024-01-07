@@ -3,6 +3,7 @@ import SwiftUI
 struct CalendarView: View {
     @State private var showDay0 = false
     @State private var showDay1 = false
+    @State private var showDay2 = false
 
     var body: some View {
         HStack {
@@ -25,9 +26,15 @@ struct CalendarView: View {
                         let presenter = Day1TrebuchetPresenter()
                         Day1TrebuchetView(delegate: presenter)
                     }
-                Button("Day 2", action: {})
+                Button("Day 2", action: {
+                    showDay2 = true
+                })
                     .buttonStyle(.borderedProminent)
-                    .tint(.red)
+                    .tint(.green)
+                    .sheet(isPresented: $showDay2) {
+                        let presenter = Day2SnowIslandPresenter()
+                        Day2SnowIslandView(delegate: presenter)
+                    }
                 Button("Day 3", action: {})
                     .buttonStyle(.borderedProminent)
                     .tint(.red)

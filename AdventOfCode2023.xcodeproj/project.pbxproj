@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA04E5C82B30C6990039C20C /* Day2CubeConundrumPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04E5C72B30C6990039C20C /* Day2CubeConundrumPresenter.swift */; };
+		CA04E5CB2B30CBE50039C20C /* PuzzleInputInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04E5CA2B30CBE50039C20C /* PuzzleInputInteractor.swift */; };
+		CA49526E2B4B6D8000425596 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CA49526D2B4B6D8000425596 /* .gitignore */; };
+		CA63E3BC2B1D53F9001A225F /* day-2.txt in Resources */ = {isa = PBXBuildFile; fileRef = CA63E3BB2B1D53F9001A225F /* day-2.txt */; };
+		CA63E3BF2B1D5490001A225F /* Day2CubeConundrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63E3BE2B1D5490001A225F /* Day2CubeConundrumView.swift */; };
 		CAF971E32B1B80AB0059A56F /* AdventOfCode2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971E22B1B80AB0059A56F /* AdventOfCode2023App.swift */; };
 		CAF971E52B1B80AB0059A56F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971E42B1B80AB0059A56F /* RootView.swift */; };
 		CAF971E72B1B80AC0059A56F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF971E62B1B80AC0059A56F /* Assets.xcassets */; };
@@ -40,6 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA04E5C62B30C4910039C20C /* JOURNAL.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = JOURNAL.md; sourceTree = "<group>"; };
+		CA04E5C72B30C6990039C20C /* Day2CubeConundrumPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2CubeConundrumPresenter.swift; sourceTree = "<group>"; };
+		CA04E5CA2B30CBE50039C20C /* PuzzleInputInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleInputInteractor.swift; sourceTree = "<group>"; };
+		CA49526D2B4B6D8000425596 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CA63E3BB2B1D53F9001A225F /* day-2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day-2.txt"; sourceTree = "<group>"; };
+		CA63E3BE2B1D5490001A225F /* Day2CubeConundrumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2CubeConundrumView.swift; sourceTree = "<group>"; };
+		CA9D70DF2B1E4B0400227532 /* JOURNAL.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = JOURNAL.md; sourceTree = "<group>"; };
 		CAF971DF2B1B80AB0059A56F /* AdventOfCode2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventOfCode2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF971E22B1B80AB0059A56F /* AdventOfCode2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventOfCode2023App.swift; sourceTree = "<group>"; };
 		CAF971E42B1B80AB0059A56F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -83,9 +95,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA04E5C92B30CBBF0039C20C /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				CA04E5CA2B30CBE50039C20C /* PuzzleInputInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		CA63E3BD2B1D545D001A225F /* Day2 */ = {
+			isa = PBXGroup;
+			children = (
+				CA63E3BE2B1D5490001A225F /* Day2CubeConundrumView.swift */,
+				CA04E5C72B30C6990039C20C /* Day2CubeConundrumPresenter.swift */,
+				CA04E5C62B30C4910039C20C /* JOURNAL.md */,
+			);
+			path = Day2;
+			sourceTree = "<group>";
+		};
 		CAF971D62B1B80AB0059A56F = {
 			isa = PBXGroup;
 			children = (
+				CA49526D2B4B6D8000425596 /* .gitignore */,
 				CAF971E12B1B80AB0059A56F /* AdventOfCode2023 */,
 				CAF971F22B1B80AD0059A56F /* AdventOfCode2023Tests */,
 				CAF971FC2B1B80AD0059A56F /* AdventOfCode2023UITests */,
@@ -110,6 +141,7 @@
 				CAF971E82B1B80AC0059A56F /* Preview Content */,
 				CAF972182B1B929E0059A56F /* Data */,
 				CAF972152B1B8FBE0059A56F /* Days */,
+				CA04E5C92B30CBBF0039C20C /* Interactors */,
 				CAF9721C2B1BA1740059A56F /* Views */,
 				CAF972232B1BCABC0059A56F /* Utils */,
 				CAF971E22B1B80AB0059A56F /* AdventOfCode2023App.swift */,
@@ -146,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				CAF9721D2B1BA23B0059A56F /* Day1 */,
+				CA63E3BD2B1D545D001A225F /* Day2 */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -154,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				CAF972192B1B92BB0059A56F /* day-1.txt */,
+				CA63E3BB2B1D53F9001A225F /* day-2 */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -173,6 +207,7 @@
 				CAF972262B1BCB8B0059A56F /* Day1TrebuchetInteractor.swift */,
 				CAF9721E2B1BA2550059A56F /* Day1TrebuchetPresenter.swift */,
 				CAF972162B1B8FC70059A56F /* Day1TrebuchetView.swift */,
+				CA9D70DF2B1E4B0400227532 /* JOURNAL.md */,
 			);
 			path = Day1;
 			sourceTree = "<group>";
@@ -289,7 +324,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA49526E2B4B6D8000425596 /* .gitignore in Resources */,
 				CAF9721A2B1B92BB0059A56F /* day-1.txt in Resources */,
+				CA63E3BC2B1D53F9001A225F /* day-2.txt in Resources */,
 				CAF971EA2B1B80AC0059A56F /* Preview Assets.xcassets in Resources */,
 				CAF971E72B1B80AC0059A56F /* Assets.xcassets in Resources */,
 			);
@@ -316,10 +353,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA63E3BF2B1D5490001A225F /* Day2CubeConundrumView.swift in Sources */,
 				CAF971E52B1B80AB0059A56F /* RootView.swift in Sources */,
 				CAF971E32B1B80AB0059A56F /* AdventOfCode2023App.swift in Sources */,
 				CAF972142B1B8E310059A56F /* CalendarView.swift in Sources */,
+				CA04E5CB2B30CBE50039C20C /* PuzzleInputInteractor.swift in Sources */,
 				CAF972272B1BCB8B0059A56F /* Day1TrebuchetInteractor.swift in Sources */,
+				CA04E5C82B30C6990039C20C /* Day2CubeConundrumPresenter.swift in Sources */,
 				CAF972252B1BCAE70059A56F /* FileProcessor.swift in Sources */,
 				CAF9721F2B1BA2550059A56F /* Day1TrebuchetPresenter.swift in Sources */,
 				CAF972172B1B8FC70059A56F /* Day1TrebuchetView.swift in Sources */,

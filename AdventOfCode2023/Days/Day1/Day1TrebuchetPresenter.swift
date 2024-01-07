@@ -1,7 +1,7 @@
 import Foundation
 
 struct Day1TrebuchetPresenter: Day1TrebuchetViewDelegate {
-    let interactor = Day1TrebuchetInteractor()
+    private let interactor = Day1TrebuchetInteractor()
     
     // Calculates the calibration value only looking at the NUMERIC digits (0,1,2,3,4,5,6,7,8,9)
     func calculateDigitCalibration() throws -> Int {
