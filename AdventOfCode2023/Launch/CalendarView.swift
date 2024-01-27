@@ -32,8 +32,8 @@ struct CalendarView: View {
                     .buttonStyle(.borderedProminent)
                     .tint(.green)
                     .sheet(isPresented: $showDay2) {
-                        let presenter = Day2SnowIslandPresenter()
-                        Day2SnowIslandView(delegate: presenter)
+                        let presenter = Day2CubeConundrumPresenter()
+                        Day2CubeConundrumView(delegate: presenter)
                     }
                 Button("Day 3", action: {})
                     .buttonStyle(.borderedProminent)

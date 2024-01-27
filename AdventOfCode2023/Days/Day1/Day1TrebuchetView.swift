@@ -1,8 +1,8 @@
 import SwiftUI
 
 protocol Day1TrebuchetViewDelegate {
-    func calculateDigitCalibration() throws -> Int
-    func calculateDigitAndWordCalibration() throws -> Int
+    func calculateDigitCalibration(completion: @escaping (Result<Int, FileRetrievingError>) -> Void)
+    func calculateDigitAndWordCalibration(completion: @escaping (Result<Int, FileRetrievingError>) -> Void)
 }
 
 struct Day1TrebuchetView: View {
@@ -11,7 +11,6 @@ struct Day1TrebuchetView: View {
     @State private var showErrorAlert = false
     
     @State private var firstCalibrationResult = 0
-    
     @State private var secondCalibrationResult = 0
     
     var body: some View {
@@ -31,26 +30,30 @@ struct Day1TrebuchetView: View {
                     Text("What is the sum of all of the calibration values?").bold().italic()
                     Spacer()
                     Button("Calibrate", action: {
-                        do {
-                            firstCalibrationResult = try delegate?.calculateDigitCalibration() ?? 0
-                        }
-                        catch FileProcessingError.notFound(let message) {
-                            print(message)
-                            showErrorAlert = true
-                        } catch {
-                            print("Unknown file processing error occurred")
-                            showErrorAlert = true
-                        }
+                        delegate?.calculateDigitCalibration(completion: { result in
+                            switch result {
+                            case .success(let sum):
+                                firstCalibrationResult = sum
+                            case .failure(let error):
+                                showErrorAlert = true
+                                switch error {
+                                case FileRetrievingError.notFound(let message):
+                                    print(message)
+                                case FileRetrievingError.networkFailure(let message):
+                                    print(message)
+                                }
+                            }
+                        })
                     })
-                    .buttonStyle(.borderedProminent)
-                    .tint(.mint)
                 }
-                .padding()
-                
-                if (firstCalibrationResult != 0) {
-                    Section {
-                        Text("💥 Calibration: \(firstCalibrationResult)").font(.title).foregroundStyle(.red).bold()
-                    }
+                .buttonStyle(.borderedProminent)
+                .tint(.mint)
+            }
+            .padding()
+            
+            if (firstCalibrationResult != 0) {
+                Section {
+                    Text("💥 Calibration: \(firstCalibrationResult)").font(.title).foregroundStyle(.red).bold()
                 }
             }
             if (firstCalibrationResult != 0) {
@@ -62,36 +65,38 @@ struct Day1TrebuchetView: View {
                     VStack {
                         Text("Your calculation isn't quite right. It looks like some of the digits are actually spelled out with letters: one, two, three, four, five, six, seven, eight, and nine also count as valid 'digits'. Try calculating the sum again with this new rule. For example `abcone2threexyz` yields 13 and `7pqrstsixteen` yields 76.")
                         Button("Calibrate", action: {
-                            do {
-                                secondCalibrationResult = try delegate?.calculateDigitAndWordCalibration() ?? 0
-                            }
-                            catch FileProcessingError.notFound(let message) {
-                                print(message)
-                                showErrorAlert = true
-                            } catch {
-                                print("Unknown file processing error occurred")
-                                showErrorAlert = true
-                            }
+                            delegate?.calculateDigitAndWordCalibration(completion: { result in
+                                switch result {
+                                case .success(let sum):
+                                    secondCalibrationResult = sum
+                                case .failure(let error):
+                                    showErrorAlert = true
+                                    switch error {
+                                    case FileRetrievingError.notFound(let message):
+                                        print(message)
+                                    case FileRetrievingError.networkFailure(let message):
+                                        print(message)
+                                    }
+                                }
+                            })
                         })
-                        .buttonStyle(.borderedProminent)
-                        .tint(.mint)
                     }
-                    .padding()
-                    if (secondCalibrationResult != 0) {
-                        Section {
-                            Text("💥 Calibration: \(secondCalibrationResult)").font(.title).foregroundStyle(.red).bold()
-                        }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.mint)
+                }
+                if (secondCalibrationResult != 0) {
+                    Section {
+                        Text("💥 Calibration: \(secondCalibrationResult)").font(.title).foregroundStyle(.red).bold()
                     }
                 }
-                
             }
-            
         }.listStyle(.insetGrouped)
             .alert("There was an error retrieving the calibration file. Don't worry, it's not your fault.", isPresented: $showErrorAlert) {
                 Button("☹️", role: .cancel) { }
             }
     }
 }
+
 
 #Preview {
     Day1TrebuchetView()

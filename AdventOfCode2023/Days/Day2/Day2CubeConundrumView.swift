@@ -1,8 +1,8 @@
 import SwiftUI
 
 protocol Day2CubeConundrumViewDelegate {
-    func calculateGameIdSum(completion: @escaping (Result<Int, Error>) -> Void)
-    func calculatePowerSum(completion: @escaping (Result<Int, Error>) -> Void)
+    func calculateGameIdSum(completion: @escaping (Result<Int, FileRetrievingError>) -> Void)
+    func calculatePowerSum(completion: @escaping (Result<Int, FileRetrievingError>) -> Void)
 
 }
 
@@ -36,8 +36,14 @@ struct Day2CubeConundrumView: View {
                             switch result {
                             case .success(let sum):
                                 part1Result = sum
-                            case .failure(_):
+                            case .failure(let error):
                                 showErrorAlert = true
+                                switch error {
+                                case FileRetrievingError.notFound(let message):
+                                    print(message)
+                                case FileRetrievingError.networkFailure(let message):
+                                    print(message)
+                                }
                             }
                         })
                     })
@@ -73,8 +79,14 @@ struct Day2CubeConundrumView: View {
                                 switch result {
                                 case .success(let sum):
                                     part2Result = sum
-                                case .failure(_):
+                                case .failure(let error):
                                     showErrorAlert = true
+                                    switch error {
+                                    case FileRetrievingError.notFound(let message):
+                                        print(message)
+                                    case FileRetrievingError.networkFailure(let message):
+                                        print(message)
+                                    }
                                 }
                             })
                         })

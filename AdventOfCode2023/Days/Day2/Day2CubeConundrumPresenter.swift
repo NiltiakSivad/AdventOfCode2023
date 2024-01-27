@@ -2,6 +2,7 @@ import Foundation
 
 struct Day2CubeConundrumPresenter: Day2CubeConundrumViewDelegate {
     private let puzzleInputInteractor = PuzzleInputInteractor()
+    private let DAY_NUM = "2"
     
     private enum MarbleColor: String {
         case red
@@ -10,9 +11,7 @@ struct Day2CubeConundrumPresenter: Day2CubeConundrumViewDelegate {
     }
     
     // Part 1
-    func calculateGameIdSum(completion: @escaping (Result<Int, Error>) -> Void) {
-        let DAY_NUM = 2
-
+    func calculateGameIdSum(completion: @escaping (Result<Int, FileRetrievingError>) -> Void) {
         puzzleInputInteractor.getPuzzleInput(day: DAY_NUM, completion: { result in
             switch result {
             case .success(let file):
@@ -64,9 +63,7 @@ struct Day2CubeConundrumPresenter: Day2CubeConundrumViewDelegate {
     }
     
     // Part 2
-    func calculatePowerSum(completion: @escaping (Result<Int, Error>) -> Void) {
-        let DAY_NUM = 2
-
+    func calculatePowerSum(completion: @escaping (Result<Int, FileRetrievingError>) -> Void) {
         puzzleInputInteractor.getPuzzleInput(day: DAY_NUM, completion: { result in
             switch result {
             case .success(let file):

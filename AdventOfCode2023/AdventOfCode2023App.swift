@@ -4,7 +4,8 @@ import SwiftUI
 struct AdventOfCode2023App: App {
     var body: some Scene {
         WindowGroup {
-            RootView()
+            let launchCoordinator = RootCoordinator()
+            launchCoordinator.launch()
         }
     }
 }
