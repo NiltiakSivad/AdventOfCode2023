@@ -3,12 +3,12 @@ import Security
 
 struct SessionTokenInteractor {
     // With this setup we want to make sure that the identifier is not guessable by other apps.
-    private let ADVENT_OF_CODE_IDENTIFIER = Bundle.main.object(forInfoDictionaryKey: "SESSION_TOKEN_KEY") as? String
+    private let ADVENT_OF_CODE_IDENTIFIER = "ADVENT_OF_CODE_SESSION_IDENTIFIER"
     
     func setSessionToken(token: String) -> Bool {
         let keychainItem = [
             kSecClass: kSecClassGenericPassword,
-            kSecAttrAccount: ADVENT_OF_CODE_IDENTIFIER ?? "",
+            kSecAttrAccount: ADVENT_OF_CODE_IDENTIFIER,
             kSecValueData: token.data(using: .utf8)!,
             kSecAttrAccessible: kSecAttrAccessibleWhenUnlocked
         ] as CFDictionary
@@ -26,7 +26,7 @@ struct SessionTokenInteractor {
     func getSessionToken() -> String? {
         let query = [
             kSecClass: kSecClassGenericPassword,
-            kSecAttrAccount: ADVENT_OF_CODE_IDENTIFIER ?? "",
+            kSecAttrAccount: ADVENT_OF_CODE_IDENTIFIER,
             kSecReturnData: true,
             kSecMatchLimit: kSecMatchLimitOne
         ] as CFDictionary
