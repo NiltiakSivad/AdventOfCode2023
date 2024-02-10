@@ -67,7 +67,11 @@
 		CA584AA82B5C391E00EEAC1A /* SessionTokenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTokenInteractor.swift; sourceTree = "<group>"; };
 		CA63E3BB2B1D53F9001A225F /* day-2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day-2.txt"; sourceTree = "<group>"; };
 		CA63E3BE2B1D5490001A225F /* Day2CubeConundrumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2CubeConundrumView.swift; sourceTree = "<group>"; };
+		CA740CA82B77EA25007E00A0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CA740CA92B77EA47007E00A0 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
+		CA740CAA2B77F119007E00A0 /* Mintfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mintfile; sourceTree = "<group>"; };
 		CA9D70DF2B1E4B0400227532 /* JOURNAL.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = JOURNAL.md; sourceTree = "<group>"; };
+		CACD32B92B78054E0094F006 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CAF971DF2B1B80AB0059A56F /* AdventOfCode2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventOfCode2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF971E22B1B80AB0059A56F /* AdventOfCode2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventOfCode2023App.swift; sourceTree = "<group>"; };
 		CAF971E42B1B80AB0059A56F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -164,10 +168,14 @@
 		CAF971D62B1B80AB0059A56F = {
 			isa = PBXGroup;
 			children = (
-				CAF971E12B1B80AB0059A56F /* AdventOfCode2023 */,
 				CA49526D2B4B6D8000425596 /* .gitignore */,
+				CACD32B92B78054E0094F006 /* .swiftlint.yml */,
+				CAF971E12B1B80AB0059A56F /* AdventOfCode2023 */,
 				CAF971F22B1B80AD0059A56F /* AdventOfCode2023Tests */,
 				CAF971FC2B1B80AD0059A56F /* AdventOfCode2023UITests */,
+				CA740CAA2B77F119007E00A0 /* Mintfile */,
+				CA740CA92B77EA47007E00A0 /* CONTRIBUTING.md */,
+				CA740CA82B77EA25007E00A0 /* README.md */,
 				CAF971E02B1B80AB0059A56F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -259,9 +267,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAF972032B1B80AD0059A56F /* Build configuration list for PBXNativeTarget "AdventOfCode2023" */;
 			buildPhases = (
+				CA740CA72B77E93C007E00A0 /* Run Code Linter */,
 				CAF971DB2B1B80AB0059A56F /* Sources */,
-				CAF971DC2B1B80AB0059A56F /* Frameworks */,
 				CAF971DD2B1B80AB0059A56F /* Resources */,
+				CAF971DC2B1B80AB0059A56F /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -340,6 +349,8 @@
 				Base,
 			);
 			mainGroup = CAF971D62B1B80AB0059A56F;
+			packageReferences = (
+			);
 			productRefGroup = CAF971E02B1B80AB0059A56F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -379,6 +390,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CA740CA72B77E93C007E00A0 /* Run Code Linter */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Code Linter";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"Warning: SwiftLint is not installed.\"\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CAF971DB2B1B80AB0059A56F /* Sources */ = {
@@ -474,7 +507,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -537,7 +570,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
