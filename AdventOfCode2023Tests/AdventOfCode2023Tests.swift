@@ -1,10 +1,3 @@
-//
-//  AdventOfCode2023Tests.swift
-//  AdventOfCode2023Tests
-//
-//  Created by Kaitlin Davis on 12/2/23.
-//
-
 import XCTest
 @testable import AdventOfCode2023
 

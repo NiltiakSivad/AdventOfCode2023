@@ -4,7 +4,9 @@ struct CalendarView: View {
     @State private var showDay0 = false
     @State private var showDay1 = false
     @State private var showDay2 = false
-
+    @State private var showDay3 = false
+    
+    
     var body: some View {
         HStack {
             VStack {
@@ -20,24 +22,32 @@ struct CalendarView: View {
                 Button("Day 1", action: {
                     showDay1 = true
                 })
-                    .buttonStyle(.borderedProminent)
-                    .tint(.green)
-                    .sheet(isPresented: $showDay1) {
-                        let presenter = Day1TrebuchetPresenter()
-                        Day1TrebuchetView(delegate: presenter)
-                    }
+                .buttonStyle(.borderedProminent)
+                .tint(.green)
+                .sheet(isPresented: $showDay1) {
+                    let presenter = Day1TrebuchetPresenter()
+                    Day1TrebuchetView(delegate: presenter)
+                }
                 Button("Day 2", action: {
                     showDay2 = true
                 })
-                    .buttonStyle(.borderedProminent)
-                    .tint(.green)
-                    .sheet(isPresented: $showDay2) {
-                        let presenter = Day2CubeConundrumPresenter()
-                        Day2CubeConundrumView(delegate: presenter)
-                    }
-                Button("Day 3", action: {})
-                    .buttonStyle(.borderedProminent)
-                    .tint(.red)
+                .buttonStyle(.borderedProminent)
+                .tint(.green)
+                .sheet(isPresented: $showDay2) {
+                    let presenter = Day2CubeConundrumPresenter()
+                    Day2CubeConundrumView(delegate: presenter)
+                }
+                Button("Day 3", action: {
+                    showDay3 = true
+                })
+                .buttonStyle(.borderedProminent)
+                .tint(.green)
+                .sheet(isPresented: $showDay3) {
+                    let presenter = Day3GearRatiosPresenter()
+                    Day3GearRatiosView(delegate: presenter)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.green)
                 Button("Day 4", action: {})
                     .buttonStyle(.borderedProminent)
                     .tint(.red)

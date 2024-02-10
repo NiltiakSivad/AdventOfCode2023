@@ -10,6 +10,9 @@
 		CA04E5C82B30C6990039C20C /* Day2CubeConundrumPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04E5C72B30C6990039C20C /* Day2CubeConundrumPresenter.swift */; };
 		CA04E5CB2B30CBE50039C20C /* PuzzleInputInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04E5CA2B30CBE50039C20C /* PuzzleInputInteractor.swift */; };
 		CA3A35752B65927400136781 /* FileRetrievingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A35742B65927400136781 /* FileRetrievingError.swift */; };
+		CA3A357B2B65997200136781 /* Day3GearRatiosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A357A2B65997200136781 /* Day3GearRatiosView.swift */; };
+		CA3A357D2B65998000136781 /* Day3GearRatiosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A357C2B65998000136781 /* Day3GearRatiosPresenter.swift */; };
+		CA3A357F2B6599C900136781 /* day-3.txt in Resources */ = {isa = PBXBuildFile; fileRef = CA3A357E2B6599C900136781 /* day-3.txt */; };
 		CA4952702B4B6EA000425596 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA49526F2B4B6EA000425596 /* LoginView.swift */; };
 		CA582A982B5C87660090FF2B /* RootViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA582A972B5C87660090FF2B /* RootViewPresenter.swift */; };
 		CA582A9A2B5C88FD0090FF2B /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA582A992B5C88FD0090FF2B /* RootCoordinator.swift */; };
@@ -53,6 +56,10 @@
 		CA04E5CA2B30CBE50039C20C /* PuzzleInputInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleInputInteractor.swift; sourceTree = "<group>"; };
 		CA3A35742B65927400136781 /* FileRetrievingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRetrievingError.swift; sourceTree = "<group>"; };
 		CA3A35762B65973C00136781 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA3A35792B65989C00136781 /* JOURNAL.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = JOURNAL.md; sourceTree = "<group>"; };
+		CA3A357A2B65997200136781 /* Day3GearRatiosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3GearRatiosView.swift; sourceTree = "<group>"; };
+		CA3A357C2B65998000136781 /* Day3GearRatiosPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3GearRatiosPresenter.swift; sourceTree = "<group>"; };
+		CA3A357E2B6599C900136781 /* day-3.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day-3.txt"; sourceTree = "<group>"; };
 		CA49526D2B4B6D8000425596 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CA49526F2B4B6EA000425596 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CA582A972B5C87660090FF2B /* RootViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewPresenter.swift; sourceTree = "<group>"; };
@@ -112,6 +119,16 @@
 				CA584AA82B5C391E00EEAC1A /* SessionTokenInteractor.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		CA3A35782B65985200136781 /* Day3 */ = {
+			isa = PBXGroup;
+			children = (
+				CA3A357C2B65998000136781 /* Day3GearRatiosPresenter.swift */,
+				CA3A357A2B65997200136781 /* Day3GearRatiosView.swift */,
+				CA3A35792B65989C00136781 /* JOURNAL.md */,
+			);
+			path = Day3;
 			sourceTree = "<group>";
 		};
 		CA584AA42B5C370C00EEAC1A /* Launch */ = {
@@ -210,6 +227,7 @@
 			children = (
 				CAF9721D2B1BA23B0059A56F /* Day1 */,
 				CA63E3BD2B1D545D001A225F /* Day2 */,
+				CA3A35782B65985200136781 /* Day3 */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -219,6 +237,7 @@
 			children = (
 				CAF972192B1B92BB0059A56F /* day-1.txt */,
 				CA63E3BB2B1D53F9001A225F /* day-2.txt */,
+				CA3A357E2B6599C900136781 /* day-3.txt */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -339,6 +358,7 @@
 			files = (
 				CAF9721A2B1B92BB0059A56F /* day-1.txt in Resources */,
 				CA63E3BC2B1D53F9001A225F /* day-2.txt in Resources */,
+				CA3A357F2B6599C900136781 /* day-3.txt in Resources */,
 				CAF971EA2B1B80AC0059A56F /* Preview Assets.xcassets in Resources */,
 				CAF971E72B1B80AC0059A56F /* Assets.xcassets in Resources */,
 			);
@@ -367,7 +387,9 @@
 			files = (
 				CA582A982B5C87660090FF2B /* RootViewPresenter.swift in Sources */,
 				CA63E3BF2B1D5490001A225F /* Day2CubeConundrumView.swift in Sources */,
+				CA3A357D2B65998000136781 /* Day3GearRatiosPresenter.swift in Sources */,
 				CAF971E52B1B80AB0059A56F /* RootView.swift in Sources */,
+				CA3A357B2B65997200136781 /* Day3GearRatiosView.swift in Sources */,
 				CAF971E32B1B80AB0059A56F /* AdventOfCode2023App.swift in Sources */,
 				CAF972142B1B8E310059A56F /* CalendarView.swift in Sources */,
 				CA04E5CB2B30CBE50039C20C /* PuzzleInputInteractor.swift in Sources */,

@@ -22,7 +22,9 @@ struct LoginView: View {
                 TextField("Enter your session token", text: $sessionToken)
                 Spacer()
                 Button(action: {
-                    delegate?.loginTapped(token: sessionToken)
+                    if (sessionToken != "") {
+                        delegate?.loginTapped(token: sessionToken)
+                    }
                 }) {
                     Text("Log in")
                         .frame(maxWidth: .infinity)
