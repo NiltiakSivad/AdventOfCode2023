@@ -158,8 +158,8 @@
 		CA63E3BD2B1D545D001A225F /* Day2 */ = {
 			isa = PBXGroup;
 			children = (
-				CA63E3BE2B1D5490001A225F /* Day2CubeConundrumView.swift */,
 				CA04E5C72B30C6990039C20C /* Day2CubeConundrumPresenter.swift */,
+				CA63E3BE2B1D5490001A225F /* Day2CubeConundrumView.swift */,
 				CA04E5C62B30C4910039C20C /* JOURNAL.md */,
 			);
 			path = Day2;

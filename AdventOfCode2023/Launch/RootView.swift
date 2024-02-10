@@ -1,7 +1,6 @@
 import SwiftUI
 
-
-protocol RootViewDelegate: LoginViewDelegate {
+protocol RootViewDelegate: AnyObject, LoginViewDelegate {
     func checkLoginStatus()
 }
 
@@ -14,7 +13,7 @@ struct RootView: View, RootViewRendering {
     var delegate: RootViewDelegate?
     var loginView = LoginView()
     var calendarView = CalendarView()
-    
+
     var body: some View {
         NavigationStack {
             if properties.showLoginView {
@@ -27,7 +26,7 @@ struct RootView: View, RootViewRendering {
         }
 
     }
-    
+
 }
 
 // MARK: - View Properties
@@ -36,20 +35,19 @@ extension RootView {
         static let `default` = Properties(showLoginView: true)
 
         @Published var showLoginView: Bool
-        
-        
+
         init(showLoginView: Bool) {
             self.showLoginView = showLoginView
         }
-        
+
         func setUserLoggedIn() {
             showLoginView = false
         }
-        
+
         func setUserLoggedOut() {
             showLoginView = true
         }
-        
+
     }
 }
 

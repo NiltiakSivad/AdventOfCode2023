@@ -1,7 +1,7 @@
 import Foundation
 
 struct RootCoordinator {
-    
+
     func launch() -> RootView {
         let presenter = RootViewPresenter()
         var view = RootView(properties: .default)

@@ -1,27 +1,27 @@
 import Foundation
 
-struct Day2CubeConundrumPresenter: Day2CubeConundrumViewDelegate {
+class Day2CubeConundrumPresenter: Day2CubeConundrumViewDelegate {
     private let puzzleInputInteractor = PuzzleInputInteractor()
-    private let DAY_NUM = "2"
-    
+    private let day = "2"
+
     private enum MarbleColor: String {
         case red
         case green
         case blue
     }
-    
+
     // Part 1
     func calculateGameIdSum(completion: @escaping (Result<Int, FileRetrievingError>) -> Void) {
-        puzzleInputInteractor.getPuzzleInput(day: DAY_NUM, completion: { result in
+        puzzleInputInteractor.getPuzzleInput(day: day, completion: { result in
             switch result {
             case .success(let file):
-                let VALID_RED = 12
-                let VALID_GREEN = 13
-                let VALID_BLUE = 14
-                
+                let validRed = 12
+                let validGreen = 13
+                let validBlue = 14
+
                 var idSum = 0
 
-                file.enumerateLines { (line, _) -> () in
+                file.enumerateLines { (line, _) -> Void in
                     let gameIdAndGamesList = line.split(separator: ": ")
                     let gameId = Int(gameIdAndGamesList[0].split(separator: " ")[1]) ?? 0
                     let sanitizedRoundsLine = gameIdAndGamesList[1]
@@ -36,23 +36,23 @@ struct Day2CubeConundrumPresenter: Day2CubeConundrumViewDelegate {
                                 print("Failure to parse draw components")
                                 return false
                             }
-                            
+
                             switch color {
                             case .red:
-                                return number <= VALID_RED
+                                return number <= validRed
                             case .green:
-                                return number <= VALID_GREEN
+                                return number <= validGreen
                             case .blue:
-                                return number <= VALID_BLUE
+                                return number <= validBlue
                             }
                         }.filter { value in
                             return value == false
                         }
-                    }.reduce([]) { x, y in
-                        return x + y
+                    }.reduce([]) { result, next in
+                        return result + next
                     }
                     if invalidRounds.count == 0 {
-                        idSum = idSum + gameId
+                        idSum += gameId
                     }
                 }
                 completion(.success(idSum))
@@ -61,67 +61,67 @@ struct Day2CubeConundrumPresenter: Day2CubeConundrumViewDelegate {
             }
         })
     }
-    
+
     // Part 2
     func calculatePowerSum(completion: @escaping (Result<Int, FileRetrievingError>) -> Void) {
-        puzzleInputInteractor.getPuzzleInput(day: DAY_NUM, completion: { result in
+        puzzleInputInteractor.getPuzzleInput(day: day, completion: { result in
             switch result {
             case .success(let file):
                 var powerSum = 0
 
-                file.enumerateLines { (line, _) -> () in
+                file.enumerateLines { (line, _) -> Void in
                     let gameIdAndGamesList = line.split(separator: ": ")
                     let sanitizedRoundsLine = gameIdAndGamesList[1].trimmingCharacters(in: .whitespaces)
 
                     let roundsList = sanitizedRoundsLine.split(separator: "; ")
-                    
+
                     let allDraws = roundsList.map { round in
                         return round.split(separator: ", ")
-                    }.reduce([]) { x, y in
-                        return x + y
+                    }.reduce([]) { result, next in
+                        return result + next
                     }
-                    
-                    var MAX_BLUE = 0
-                    var MAX_GREEN = 0
-                    var MAX_RED = 0
+
+                    var maxBlue = 0
+                    var maxGreen = 0
+                    var maxRed = 0
 
                     allDraws.forEach { draw in
                         let drawComponents = draw.split(separator: " ")
-           
-                        for i in 0..<drawComponents.count where Int(drawComponents[i]) != nil {
-                            guard let number = Int(drawComponents[i]),
-                                  let color = MarbleColor(rawValue: String(drawComponents[i + 1])) else {
+
+                        for index in 0..<drawComponents.count where Int(drawComponents[index]) != nil {
+                            guard let number = Int(drawComponents[index]),
+                                  let color = MarbleColor(rawValue: String(drawComponents[index + 1])) else {
                                 print("Failure to match marble color")
                                 return
                             }
-                            
+
                             switch color {
                             case .red:
-                                if (number > MAX_RED) {
-                                    MAX_RED = number
+                                if number > maxRed {
+                                    maxRed = number
                                 }
                             case .green:
-                                if (number > MAX_GREEN) {
-                                    MAX_GREEN = number
+                                if number > maxGreen {
+                                    maxGreen = number
                                 }
                             case .blue:
-                                if (number > MAX_BLUE) {
-                                    MAX_BLUE = number
+                                if number > maxBlue {
+                                    maxBlue = number
                                 }
                             }
-                            
+
                         }
                     }
-                    let leastPowerSum = [MAX_RED, MAX_GREEN, MAX_BLUE].filter { number in
+                    let leastPowerSum = [maxRed, maxGreen, maxBlue].filter { number in
                         return number != 0
-                    }.reduce(1) { x, y in
-                        return x * y
+                    }.reduce(1) { result, next in
+                        return result * next
                     }
-                    powerSum = powerSum + leastPowerSum
-                    
-                    MAX_BLUE = 0
-                    MAX_GREEN = 0
-                    MAX_RED = 0
+                    powerSum += leastPowerSum
+
+                    maxBlue = 0
+                    maxGreen = 0
+                    maxRed = 0
                 }
                 completion(.success(powerSum))
             case .failure(let error):

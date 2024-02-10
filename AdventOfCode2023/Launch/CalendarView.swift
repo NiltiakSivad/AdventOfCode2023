@@ -5,8 +5,7 @@ struct CalendarView: View {
     @State private var showDay1 = false
     @State private var showDay2 = false
     @State private var showDay3 = false
-    
-    
+
     var body: some View {
         HStack {
             VStack {
@@ -18,7 +17,7 @@ struct CalendarView: View {
                 .alert("Yay to me 🎉 for starting my Advent of Code journey!", isPresented: $showDay0) {
                     Button("👏", role: .cancel) { }
                 }
-                
+
                 Button("Day 1", action: {
                     showDay1 = true
                 })
@@ -77,7 +76,7 @@ struct CalendarView: View {
                     .tint(.red)
             }
             .frame(maxWidth: .infinity)
-            
+
             VStack {
                 Button("Day 13", action: {})
                     .buttonStyle(.borderedProminent)

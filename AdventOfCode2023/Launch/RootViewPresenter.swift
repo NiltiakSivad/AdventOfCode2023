@@ -1,7 +1,7 @@
 import Foundation
 
 class RootViewPresenter: RootViewDelegate {
-    private let sessionTokenInteractor = SessionTokenInteractor();
+    private let sessionTokenInteractor = SessionTokenInteractor()
 
     var renderer: RootViewRendering?
 
@@ -21,11 +21,11 @@ class RootViewPresenter: RootViewDelegate {
             // Show error message
         }
     }
-    
+
     func useLocalPuzzleInputTapped() {
         renderer?.properties.showLoginView = false
     }
-    
+
 }
 
 // MARK: - State
