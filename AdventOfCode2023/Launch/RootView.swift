@@ -10,7 +10,7 @@ protocol RootViewRendering {
 
 struct RootView: View, RootViewRendering {
     @ObservedObject var properties: RootView.Properties
-    var delegate: RootViewDelegate?
+    weak var delegate: RootViewDelegate?
     var loginView = LoginView()
     var calendarView = CalendarView()
 

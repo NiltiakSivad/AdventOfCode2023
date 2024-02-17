@@ -12,7 +12,7 @@ struct Day3GearRatiosView: View {
     @State private var part1Result = 0
     @State private var part2Result = 0
 
-    var delegate: Day3GearRatiosViewDelegate?
+    weak var delegate: Day3GearRatiosViewDelegate?
 
     var body: some View {
         List {

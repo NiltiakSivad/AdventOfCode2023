@@ -12,7 +12,7 @@ struct Day2CubeConundrumView: View {
     @State private var part1Result = 0
     @State private var part2Result = 0
 
-    var delegate: Day2CubeConundrumViewDelegate?
+    weak var delegate: Day2CubeConundrumViewDelegate?
 
     var body: some View {
         List {

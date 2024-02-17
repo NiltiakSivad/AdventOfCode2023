@@ -7,7 +7,7 @@ protocol LoginViewDelegate: AnyObject {
 
 struct LoginView: View {
 
-    var delegate: LoginViewDelegate?
+    weak var delegate: LoginViewDelegate?
 
     @State private var sessionToken = ""
 

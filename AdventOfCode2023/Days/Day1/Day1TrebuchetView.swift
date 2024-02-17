@@ -6,7 +6,7 @@ protocol Day1TrebuchetViewDelegate: AnyObject {
 }
 
 struct Day1TrebuchetView: View {
-    var delegate: Day1TrebuchetViewDelegate?
+    weak var delegate: Day1TrebuchetViewDelegate?
 
     @State private var showErrorAlert = false
 
