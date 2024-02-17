@@ -3,7 +3,7 @@ import Foundation
 class LocalFileInteractor {
 
     // Load an entire file into memory at once
-    static func getFile(name: String, 
+    static func getFile(name: String,
                         ext: String = "txt",
                         completion: @escaping (Result<String, FileRetrievingError>) -> Void) {
         if let settingsURL = Bundle.main.url(forResource: name, withExtension: ext),

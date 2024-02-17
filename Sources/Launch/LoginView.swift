@@ -1,6 +1,6 @@
 import SwiftUI
 
-protocol LoginViewDelegate: AnyObject {
+protocol LoginViewDelegate: AnyObject, AutoMockable {
     func loginTapped(token: String)
     func useLocalPuzzleInputTapped()
 }

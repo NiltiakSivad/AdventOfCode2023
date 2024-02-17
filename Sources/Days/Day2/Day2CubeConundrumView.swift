@@ -1,9 +1,8 @@
 import SwiftUI
 
-protocol Day2CubeConundrumViewDelegate: AnyObject {
+protocol Day2CubeConundrumViewDelegate: AnyObject, AutoMockable {
     func calculateGameIdSum(completion: @escaping (Result<Int, FileRetrievingError>) -> Void)
     func calculatePowerSum(completion: @escaping (Result<Int, FileRetrievingError>) -> Void)
-
 }
 
 struct Day2CubeConundrumView: View {

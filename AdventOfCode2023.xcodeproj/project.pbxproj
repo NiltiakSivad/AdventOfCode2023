@@ -19,6 +19,7 @@
 		CA584AA92B5C391E00EEAC1A /* SessionTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA584AA82B5C391E00EEAC1A /* SessionTokenInteractor.swift */; };
 		CA63E3BC2B1D53F9001A225F /* day-2.txt in Resources */ = {isa = PBXBuildFile; fileRef = CA63E3BB2B1D53F9001A225F /* day-2.txt */; };
 		CA63E3BF2B1D5490001A225F /* Day2CubeConundrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63E3BE2B1D5490001A225F /* Day2CubeConundrumView.swift */; };
+		CA704C262B81416400351CFC /* AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA704C252B81416400351CFC /* AutoMockable.swift */; };
 		CAF971E32B1B80AB0059A56F /* AdventOfCode2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971E22B1B80AB0059A56F /* AdventOfCode2023App.swift */; };
 		CAF971E52B1B80AB0059A56F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF971E42B1B80AB0059A56F /* RootView.swift */; };
 		CAF971E72B1B80AC0059A56F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF971E62B1B80AC0059A56F /* Assets.xcassets */; };
@@ -67,6 +68,10 @@
 		CA584AA82B5C391E00EEAC1A /* SessionTokenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTokenInteractor.swift; sourceTree = "<group>"; };
 		CA63E3BB2B1D53F9001A225F /* day-2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day-2.txt"; sourceTree = "<group>"; };
 		CA63E3BE2B1D5490001A225F /* Day2CubeConundrumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2CubeConundrumView.swift; sourceTree = "<group>"; };
+		CA704C1C2B81328C00351CFC /* sourcery.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = sourcery.yml; sourceTree = "<group>"; };
+		CA704C202B813DA200351CFC /* AutoMockable.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoMockable.stencil; sourceTree = "<group>"; };
+		CA704C222B813F9200351CFC /* AdventOfCodeMocks.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventOfCodeMocks.generated.swift; sourceTree = "<group>"; };
+		CA704C252B81416400351CFC /* AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
 		CA740CA82B77EA25007E00A0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CA740CA92B77EA47007E00A0 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		CA740CAA2B77F119007E00A0 /* Mintfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mintfile; sourceTree = "<group>"; };
@@ -150,6 +155,7 @@
 		CA584AA72B5C378300EEAC1A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CA704C242B81414F00351CFC /* Protocols */,
 				CA04E5C92B30CBBF0039C20C /* Interactors */,
 			);
 			path = Shared;
@@ -165,14 +171,41 @@
 			path = Day2;
 			sourceTree = "<group>";
 		};
+		CA704C1D2B8132D400351CFC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CA704C1C2B81328C00351CFC /* sourcery.yml */,
+				CA704C202B813DA200351CFC /* AutoMockable.stencil */,
+				CA704C222B813F9200351CFC /* AdventOfCodeMocks.generated.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		CA704C1E2B813B3900351CFC /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CA704C1D2B8132D400351CFC /* Mocks */,
+				CAF971F22B1B80AD0059A56F /* Unit */,
+				CAF971FC2B1B80AD0059A56F /* UI */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		CA704C242B81414F00351CFC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CA704C252B81416400351CFC /* AutoMockable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		CAF971D62B1B80AB0059A56F = {
 			isa = PBXGroup;
 			children = (
 				CA49526D2B4B6D8000425596 /* .gitignore */,
 				CACD32B92B78054E0094F006 /* .swiftlint.yml */,
-				CAF971E12B1B80AB0059A56F /* AdventOfCode2023 */,
-				CAF971F22B1B80AD0059A56F /* AdventOfCode2023Tests */,
-				CAF971FC2B1B80AD0059A56F /* AdventOfCode2023UITests */,
+				CAF971E12B1B80AB0059A56F /* Sources */,
+				CA704C1E2B813B3900351CFC /* Tests */,
 				CA740CAA2B77F119007E00A0 /* Mintfile */,
 				CA740CA92B77EA47007E00A0 /* CONTRIBUTING.md */,
 				CA740CA82B77EA25007E00A0 /* README.md */,
@@ -190,7 +223,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CAF971E12B1B80AB0059A56F /* AdventOfCode2023 */ = {
+		CAF971E12B1B80AB0059A56F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				CAF971E62B1B80AC0059A56F /* Assets.xcassets */,
@@ -202,7 +235,7 @@
 				CA3A35762B65973C00136781 /* Info.plist */,
 				CAF971E22B1B80AB0059A56F /* AdventOfCode2023App.swift */,
 			);
-			path = AdventOfCode2023;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		CAF971E82B1B80AC0059A56F /* Preview Content */ = {
@@ -213,21 +246,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CAF971F22B1B80AD0059A56F /* AdventOfCode2023Tests */ = {
+		CAF971F22B1B80AD0059A56F /* Unit */ = {
 			isa = PBXGroup;
 			children = (
 				CAF971F32B1B80AD0059A56F /* AdventOfCode2023Tests.swift */,
 			);
-			path = AdventOfCode2023Tests;
+			path = Unit;
 			sourceTree = "<group>";
 		};
-		CAF971FC2B1B80AD0059A56F /* AdventOfCode2023UITests */ = {
+		CAF971FC2B1B80AD0059A56F /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				CAF971FD2B1B80AD0059A56F /* AdventOfCode2023UITests.swift */,
 				CAF971FF2B1B80AD0059A56F /* AdventOfCode2023UITestsLaunchTests.swift */,
 			);
-			path = AdventOfCode2023UITests;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		CAF972152B1B8FBE0059A56F /* Days */ = {
@@ -267,7 +300,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAF972032B1B80AD0059A56F /* Build configuration list for PBXNativeTarget "AdventOfCode2023" */;
 			buildPhases = (
-				CA740CA72B77E93C007E00A0 /* Run Code Linter */,
+				CA740CA72B77E93C007E00A0 /* Run Code Linter (SwiftLint) */,
+				CA704C272B81427100351CFC /* Run Auto Mock Generation (Sourcery) */,
 				CAF971DB2B1B80AB0059A56F /* Sources */,
 				CAF971DD2B1B80AB0059A56F /* Resources */,
 				CAF971DC2B1B80AB0059A56F /* Frameworks */,
@@ -392,7 +426,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CA740CA72B77E93C007E00A0 /* Run Code Linter */ = {
+		CA704C272B81427100351CFC /* Run Auto Mock Generation (Sourcery) */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -402,7 +436,26 @@
 			);
 			inputPaths = (
 			);
-			name = "Run Code Linter";
+			name = "Run Auto Mock Generation (Sourcery)";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sourcery --config ${PROJECT_DIR}/Tests/Mocks/sourcery.yml\n";
+		};
+		CA740CA72B77E93C007E00A0 /* Run Code Linter (SwiftLint) */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Code Linter (SwiftLint)";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -420,6 +473,7 @@
 			files = (
 				CA582A982B5C87660090FF2B /* RootViewPresenter.swift in Sources */,
 				CA63E3BF2B1D5490001A225F /* Day2CubeConundrumView.swift in Sources */,
+				CA704C262B81416400351CFC /* AutoMockable.swift in Sources */,
 				CA3A357D2B65998000136781 /* Day3GearRatiosPresenter.swift in Sources */,
 				CAF971E52B1B80AB0059A56F /* RootView.swift in Sources */,
 				CA3A357B2B65997200136781 /* Day3GearRatiosView.swift in Sources */,
@@ -596,11 +650,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AdventOfCode2023/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KLWB8E2NV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AdventOfCode2023/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -626,11 +680,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AdventOfCode2023/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KLWB8E2NV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AdventOfCode2023/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

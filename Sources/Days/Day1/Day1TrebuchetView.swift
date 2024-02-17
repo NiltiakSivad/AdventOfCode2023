@@ -1,6 +1,6 @@
 import SwiftUI
 
-protocol Day1TrebuchetViewDelegate: AnyObject {
+protocol Day1TrebuchetViewDelegate: AnyObject, AutoMockable {
     func calculateDigitCalibration(completion: @escaping (Result<Int, FileRetrievingError>) -> Void)
     func calculateDigitAndWordCalibration(completion: @escaping (Result<Int, FileRetrievingError>) -> Void)
 }

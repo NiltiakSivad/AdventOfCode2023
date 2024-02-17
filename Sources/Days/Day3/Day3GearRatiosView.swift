@@ -1,9 +1,8 @@
 import SwiftUI
 
-protocol Day3GearRatiosViewDelegate: AnyObject {
+protocol Day3GearRatiosViewDelegate: AnyObject, AutoMockable {
     func loadGridData(completion: @escaping(Result<Void, FileRetrievingError>) -> Void)
     func calculateGearIdSum(completion: @escaping (Result<Int, Error>) -> Void)
-
 }
 
 struct Day3GearRatiosView: View {

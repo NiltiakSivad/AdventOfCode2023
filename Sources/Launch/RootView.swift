@@ -1,6 +1,6 @@
 import SwiftUI
 
-protocol RootViewDelegate: AnyObject, LoginViewDelegate {
+protocol RootViewDelegate: AnyObject, AutoMockable, LoginViewDelegate {
     func checkLoginStatus()
 }
 
@@ -24,9 +24,7 @@ struct RootView: View, RootViewRendering {
         }.onAppear {
             delegate?.checkLoginStatus()
         }
-
     }
-
 }
 
 // MARK: - View Properties
@@ -47,7 +45,6 @@ extension RootView {
         func setUserLoggedOut() {
             showLoginView = true
         }
-
     }
 }
 
