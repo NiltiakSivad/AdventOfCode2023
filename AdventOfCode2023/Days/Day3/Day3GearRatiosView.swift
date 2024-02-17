@@ -49,8 +49,13 @@ struct Day3GearRatiosView: View {
                         .italic()
                     Spacer()
                     Button("Calculate", action: {
-                        delegate?.calculateGearIdSum(completion: { _ in
-
+                        delegate?.calculateGearIdSum(completion: { result in
+                            switch result {
+                            case .success(let sum):
+                                part1Result = sum
+                            case .failure(_):
+                                showErrorAlert = true
+                            }
                         })
                     })
                     .buttonStyle(.borderedProminent)
